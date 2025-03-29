@@ -15,15 +15,16 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
   const [imgUrl, setImgUrl] = useState('');
   const [imdbUrl, setImdbUrl] = useState('');
   const [imdbId, setImdbId] = useState('');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const newMovie: Movie = {
-      title,
-      description,
-      imgUrl,
-      imdbUrl,
-      imdbId,
+      title: title.trim(),
+      description: description.trim(),
+      imgUrl: imgUrl.trim(),
+      imdbUrl: imdbUrl.trim(),
+      imdbId: imdbId.trim(),
     };
 
     onAdd(newMovie);
